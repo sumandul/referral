@@ -34,11 +34,11 @@ export default function Home() {
     {/* popupmodal for perview email */}
 
       <PopUpModal isOpen={isOpen} setClose={setClose}  >
-        <div>
+        <div className="">
           <div className="flex justify-end"><HiXMark className="text-[#9797a5]  text-2xl" onClick={() => setClose(false)} /></div>
-          <h2 className="text-[18px] font-semibold">Preview Email</h2>
-          <div className="mt-8">
-            <strong>Subject:</strong> Minerva Drake thinks you'll love texting your church with
+          <h2 className="text-[18px] text-[#0f0f39] font-semibold">Preview Email</h2>
+          <div className="mt-8 text-[#0f0f39] text-[16px] font-normal">
+            <strong className="">Subject:</strong> Minerva Drake thinks you'll love texting your church with
             Clearstream 🎉
           </div>
 
@@ -54,13 +54,13 @@ export default function Home() {
                   <Image src={ReferrelImage} width={300} height={300} />
                 </div>
                 <div className="px-6  text-[#9797a5]">
-                  <p>Hey there,</p>
+                  <p className="text-[16px] font-normal">Hey there,</p>
                   <h1 className=" text-[#0f0f39] text-[18px] font-bold my-4">
                     Clearstream is a powerful texting software that was built
                     specifically for churches.
                   </h1>
 
-                  <p>
+                  <p className=" text-[16px] font-normal">
                     Your friend, <span className=" font-bold">Minerva Drake</span>, is already
                     connecting with church staff, volunteers, members, and
                     guests through texting. They told us you might enjoy using
@@ -68,50 +68,40 @@ export default function Home() {
                   </p>
                   <div className=" ">
                     <p className=" my-6">Here are a few things you can do:</p>
-                    <ul className=" text-gray-400 ">
-                      <li className=" flex items-center   gap-1 ">
+                    <ul className=" text-[#9797a5] list-disc list-outside px-10 marker:text-[#818191]  text-[14px] ">
+                      <li>
                         {" "}
-                        <div className="w-2 h-2 rounded-full  bg-gray-500"></div>
+                     
                         Text your entire church with reliable deliverability
                       </li>
-                      <li className=" flex items-center  gap-1 mt-1 ">
-                        {" "}
-                        <div className="w-2 h-2 rounded-full   bg-gray-500"></div>
+                      <li >
                         Connect with visitors using text-to-join keywords, and
                         follow up automatically with workflows
                       </li>
-                      <li className=" flex items-center mt-1 gap-1 ">
+                      <li >
                         {" "}
-                        <div className="w-2 h-2 rounded-full  bg-gray-500"></div>
                         Survey your church using text polls
                       </li>
-                      <li className=" flex items-center  gap-1 mt-1 ">
+                      <li >
                         {" "}
-                        <div className="w-2 h-2 rounded-full  bg-gray-500"></div>
                         Engage in one-on-one conversations from your inbox
                       </li>
-                      <li className=" flex items-center mt-1  gap-1 ">
-                        {" "}
-                        <div className="w-2 h-2 rounded-full  bg-gray-500"></div>
+                      <li >
+                      
                         Personalize your texts with links, custom fields,
                         pictures, etc.
                       </li>
-                      <li className=" flex items-center  mt-1 gap-1 ">
-                        {" "}
-                        <div className="w-2 h-2 rounded-full  bg-gray-500"></div>
+                      <li >
                         Organize your campuses and ministries with subaccounts
                       </li>
-                      <li className=" flex items-center mt-1  gap-1 ">
-                        {" "}
-                        <div className="w-2 h-2 rounded-full  bg-gray-500"></div>
+                      <li >
+                     
                         Integrate with your favorite church tools
                       </li>
                     </ul>
 
                   </div>
-
-                </div>
-                <div className="px-3 text-[#9797a5] pb-6 mt-4">
+                  <div className=" text-[#9797a5] pb-6 mt-4">
                   <p>...and a whole lot more!</p>
                   <div className=" flex justify-center my-8">
                     <button className=" rounded  px-3 py-2 text-white bg-[#EE1B7E]">
@@ -120,6 +110,8 @@ export default function Home() {
                   </div>
                   <p className=" text-center">This is a one-time email sent on behalf of Minerva Drake.</p>
                 </div>
+                </div>
+               
               </div>
               <div className=" flex justify-center mt-10 text-[12px] text-[#9797a5]"><p>© 2023 Clearstream. All rights reserved.</p></div>
             </div>
@@ -130,16 +122,12 @@ export default function Home() {
 
 {/* referral section */}
      
-        <div className=" mx-40 my-10">
-          <div className="flex gap-10 mt-20">
-            <div className="  basis-[20%]">
-              {/* <ul>
-                <li>Referral</li>
-              </ul> */}
-            </div>
-            <div className=" basis-[80%] ">
-              <div className=" bg-white py-10 px-8 shadow rounded">
-                <h2 className="text-[18px]  font-semibold">Referral Program</h2>
+        <div className="">
+          <div className="flex justify-center mt-20">
+           
+            <div className=" ">
+              <div className=" bg-white  py-10 px-8 shadow rounded">
+                <h2 className="text-[18px]  text-[#0f0f39] font-semibold">Referral Program</h2>
                 <div className="m-5 rounded-lg bg-gray-100 p-8 dark:bg-gray-900">
                   <div className="flex">
                     <div>
@@ -158,13 +146,13 @@ export default function Home() {
                       </svg>
                     </div>
                     <div>
-                      <p class="text-xl font-bold">
+                      <p class="text-[18px] text-[#0f0f39] font-bold">
                         {" "}
                         Love Clearstream? Refer a church and you'll get $50!{" "}
                       </p>
                     </div>
                   </div>
-                  <div class="mt-4 text-gray-700 text-sm text-[ #3E3E47] dark:text-gray-300">
+                  <div class="mt-4  text-[14px] text-[#3e3e47] font-normal ">
                     {" "}
                     When someone you refer signs up for a paid plan, we'll email
                     you a $50 Amazon gift card!{" "}
@@ -182,7 +170,7 @@ export default function Home() {
                   <div className="mt-10">
                     <label
                       for="affiliate-link"
-                      className="mb-2 inline-block text-lg font-semibold"
+                      className="mb-2 inline-block text-[16px] text-[#0f0f39] font-semibold"
                     >
                       {" "}
                       Share your unique link{" "}
@@ -190,13 +178,13 @@ export default function Home() {
                     <div className="flex ">
                       <input
                         type="text"
+                        
                         placeholder="https://app.clearstream.io/r/minerva-85571"
-                        className=" rounded-br-none w-1/2 border-[1px] border-[#D7DAEC] py-2 rounded px-2 rounded-tr-none border-r-0"
-                        readonly=""
+                        className=" rounded-br-none w-1/2 border-[1px] border-[#D7DAEC] text-[14px] text-[#17191d] font-normal py-3 rounded px-2 rounded-tr-none border-r-0"
                       />
                       <button
                         type="button"
-                        className="btn btn-pink w-40 whitespace-nowrap  rounded bg-pink-500 text-white rounded-bl-none rounded-tl-none"
+                        className=" w-40 whitespace-nowrap  rounded text-[14px] font-normal  bg-pink-500 text-white rounded-bl-none rounded-tl-none"
                       >
                         Copy Link
                       </button>
@@ -204,7 +192,7 @@ export default function Home() {
                   </div>
                 </div>
                 <form className="mx-8 mb-5">
-                  <label className="mb-2 inline-block text-lg font-semibold">
+                  <label  className="mb-2 inline-block text-[16px] text-[#0f0f39] font-semibold">
                     {" "}
                     Send an email invite{" "}
                   </label>
@@ -212,14 +200,14 @@ export default function Home() {
                     <div key={index} className="relative flex mb-2">
                       <input
                         type="email"
-                        className="mr-3 w-full border-[1px] border-[#D7DAEC] py-2 rounded px-2"
+                        className="mr-3 w-full border-[1px] border-[#D7DAEC] text-[14px] text-[#17191d] font-normal py-3   rounded px-2"
                         placeholder="Enter email address"
                         onChange={(e) => handleInputChange(index, e.target.value)}
                       />
                       <input
                         type="text"
                         placeholder="Enter name (optional)"
-                        className="border-[1px] border-[#D7DAEC]     w-full py-2 rounded px-2"
+                        className="border-[1px] border-[#D7DAEC] text-[14px] text-[#17191d] font-normal py-3    w-full  rounded px-2"
                       />
                       {
                         index >0 &&  <button
@@ -272,24 +260,24 @@ export default function Home() {
                     <button
                       onClick={handleAddField}
                       type="button"
-                      class="text-pink-500 focus:outline-none"
+                      class="text-[#e11172] text-[14px]  font-normal focus:outline-none"
                     >
                       {" "}
                       Add another{" "}
                     </button>
                   </div>
-                  <div class="flex mt-10 items-center justify-between">
+                  <div class="flex  items-center justify-between">
                     <div class="space-x-4">
                       <button
                         type="button"
-                        class="  bg-[#EE1B7E] text-white  rounded px-2 py-2 whitespace-nowrap"
+                        class="  bg-[#EE1B7E] text-white text-[14px] font-normal  rounded px-4 py-2 whitespace-nowrap"
                       >
                         {" "}
-                        Send Email
+                        Send Emails
                       </button>
                       <button
                         type="button"
-                        class="text-pink-500 focus:outline-none"
+                        class="text-[#e11172] text-[14px] font-normal focus:outline-none"
                         onClick={() => setClose(true)}
                       >
                         {" "}
@@ -300,9 +288,10 @@ export default function Home() {
                 </form>
               </div>
               <div className=" mt-20  py-7 px-10 bg-white shadow rounded">
-                <table class="table-auto w-full  ">
+                <h2 className="text-[#0f0f39]   font-semibold text-[18px]">Referral Sign Ups</h2>
+                <table class="table-auto w-full  mt-3 ">
                   <thead>
-                    <tr className=" border-b-[1px] text-[#9797A5] font-normal   text-[12px] py-3 border-[#D7DAEC]">
+                    <tr className=" border-b-[1px] text-[#9797a5] font-normal   text-[12px] py-3 border-[#D7DAEC]">
                       <th className=" py-3   text-start">
                         Account</th>
                       <th className=" text-start">Sign Up Date</th>
@@ -325,7 +314,8 @@ export default function Home() {
 
               </div>
               <div className=" mt-20  py-7 px-10 bg-white shadow rounded">
-                <table class="table-auto w-full  ">
+              <h2 className="text-[#0f0f39]   font-semibold text-[18px]">Email Invites</h2>
+                <table class="table-auto w-full mt-3  ">
                   <thead>
                     <tr className=" border-b-[1px]  text-[#9797A5] font-normal   text-[12px]  py-3 border-[#D7DAEC]">
                       <th className=" py-3  text-start">
@@ -337,12 +327,12 @@ export default function Home() {
 
                     </tr>
                   </thead>
-                  <tbody className=" text-[13px]">
+                  <tbody className=" text-[14px] text-[#0f0f39] font-normal">
                     <tr className=" border-b-[1px]  border-[#D7DAEC]">
                       <td className=" py-8">suman dulal</td>
                       <td>dulalsuman853@gmail.com</td>
-                      <td><span>8/3/2023</span><br /><span className="text-gray-500">8:43 PM </span></td>
-                      <td><button className=" bg-green-100 rounded-lg text-[10px] px-2 py-1">Invite Sent</button></td>
+                      <td><span>8/3/2023</span><br /><span className="text-[#808091]">8:43 PM </span></td>
+                      <td><button className=" bg-green-100 text-[#15803d] font-semibold rounded-full py-1 text-[12px] px-3 ">Invite Sent</button></td>
                     </tr>
 
 
