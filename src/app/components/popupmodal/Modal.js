@@ -20,7 +20,7 @@ const Modal = ({
         <div className=" fixed  flex justify-center items-center     overflow-y-auto  inset-0    z-[999]  ">
           <div
             className={`    overflow-hidden 
-          bg-white shadow-lg  px-6   sm:w-[${width}] h-[80v]  mt-[620px]  w-[700px] rounded-xl py-8  flex flex-col  animate-notify  `}
+          bg-white shadow-lg  px-6   sm:w-[${width}] h-[80v]  mt-[620px]  w-[700px] rounded-xl py-8  flex flex-col  animate-notify modal-fade-enter modal-fade-enter-active `}
             {...props}
           >
             <header className="flex items-center justify-between ">

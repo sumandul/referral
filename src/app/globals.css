@@ -18,6 +18,22 @@
 
 body {
 
+/* Add these styles to your CSS or stylesheet */
+
 
   background: rgb(251, 251, 253)
 }
+@keyframes fade-in {
+  0% {
+      transform:   translateY(-100%);
+  }
+  100% {
+    transform:   translateY(0%);
+  }
+}
+
+.modal-fade-enter {
+  animation: fade-in 1s linear;
+
+}
+
