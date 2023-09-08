@@ -7,8 +7,6 @@ import {
   HiOutlineClipboardCheck,
   HiPencilAlt,
 } from "react-icons/hi";
-import Image from "next/image";
-import PImage from "../../../public/h.png";
 import { useState } from "react";
 import Toogle from "../components/toogle/page";
 
