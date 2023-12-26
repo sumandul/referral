@@ -18,7 +18,7 @@ function WebcamSample() {
       // Ensure that the browser has access to the camera and audio
       await navigator.mediaDevices.getUserMedia({
         video: true,
-        audio: false,
+        audio: true,
       });
 
       setIsShowVideo(true);
