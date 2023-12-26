@@ -22,7 +22,9 @@ const VideoRecorder = () => {
     };
 
     mediaRecorderRef.current.onstop = () => {
-      const recordedBlob = new Blob(recordedChunks, { type: "video/webm" });
+      const recordedBlob = new Blob(recordedChunks, {
+        type: mediaRecorderRef.current.mimeType,
+      });
       const videoUrl = URL.createObjectURL(recordedBlob);
       setRecordedVideoUrl(videoUrl);
     };
@@ -41,6 +43,15 @@ const VideoRecorder = () => {
     }
   };
 
+  const handleDownload = () => {
+    if (recordedVideoUrl) {
+      const a = document.createElement("a");
+      a.href = recordedVideoUrl;
+      a.download = "recorded-video.webm";
+      a.click();
+    }
+  };
+
   return (
     <div className="camView">
       <Webcam audio={true} ref={webcamRef} />
@@ -52,10 +63,16 @@ const VideoRecorder = () => {
       )}
 
       {recordedVideoUrl && (
-        <video controls width="640" height="480">
-          <source src={recordedVideoUrl} type="video/webm" />
-          Your browser does not support the video tag.
-        </video>
+        <div>
+          <video controls width="640" height="480">
+            <source
+              src={recordedVideoUrl}
+              type={mediaRecorderRef.current.mimeType}
+            />
+            Your browser does not support the video tag.
+          </video>
+          <button onClick={handleDownload}>Download Video</button>
+        </div>
       )}
     </div>
   );
