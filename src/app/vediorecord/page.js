@@ -1,56 +1,64 @@
 "use client";
-
 import React, { useRef, useState } from "react";
 import Webcam from "react-webcam";
 
-function WebcamSample() {
-  const [isShowVideo, setIsShowVideo] = useState(false);
-  const videoElement = useRef(null);
+const VideoRecorder = () => {
+  const [recording, setRecording] = useState(false);
+  const [recordedChunks, setRecordedChunks] = useState([]);
+  const [recordedVideoUrl, setRecordedVideoUrl] = useState(null);
+  const webcamRef = useRef(null);
+  const mediaRecorderRef = useRef(null);
 
-  const videoConstraints = {
-    width: 640,
-    height: 480,
-    facingMode: "user",
+  const startRecording = () => {
+    setRecordedChunks([]);
+    const stream = webcamRef.current.stream;
+
+    mediaRecorderRef.current = new MediaRecorder(stream);
+
+    mediaRecorderRef.current.ondataavailable = (event) => {
+      if (event.data.size > 0) {
+        setRecordedChunks((prev) => prev.concat(event.data));
+      }
+    };
+
+    mediaRecorderRef.current.onstop = () => {
+      const recordedBlob = new Blob(recordedChunks, { type: "video/webm" });
+      const videoUrl = URL.createObjectURL(recordedBlob);
+      setRecordedVideoUrl(videoUrl);
+    };
+
+    mediaRecorderRef.current.start();
+    setRecording(true);
   };
 
-  const startCam = async () => {
-    try {
-      // Ensure that the browser has access to the camera and audio
-      await navigator.mediaDevices.getUserMedia({
-        video: true,
-        audio: true,
-      });
-
-      setIsShowVideo(true);
-    } catch (error) {
-      console.error("Error accessing camera:", error);
+  const stopRecording = () => {
+    if (
+      mediaRecorderRef.current &&
+      mediaRecorderRef.current.state === "recording"
+    ) {
+      mediaRecorderRef.current.stop();
+      setRecording(false);
     }
-  };
-
-  const stopCam = () => {
-    if (videoElement.current && videoElement.current.stream) {
-      const stream = videoElement.current.stream;
-      const tracks = stream.getTracks();
-      tracks.forEach((track) => track.stop());
-    }
-    setIsShowVideo(false);
   };
 
   return (
-    <div>
-      <div className="camView">
-        {isShowVideo && (
-          <Webcam
-            audio={false}
-            ref={videoElement}
-            videoConstraints={videoConstraints}
-          />
-        )}
-      </div>
-      <button onClick={startCam}>Start Video</button>
-      <button onClick={stopCam}>Stop Video</button>
+    <div className="camView">
+      <Webcam audio={true} ref={webcamRef} />
+
+      {recording ? (
+        <button onClick={stopRecording}>Stop Recording</button>
+      ) : (
+        <button onClick={startRecording}>Start Recording</button>
+      )}
+
+      {recordedVideoUrl && (
+        <video controls width="640" height="480">
+          <source src={recordedVideoUrl} type="video/webm" />
+          Your browser does not support the video tag.
+        </video>
+      )}
     </div>
   );
-}
+};
 
-export default WebcamSample;
+export default VideoRecorder;
