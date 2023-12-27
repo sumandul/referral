@@ -1,7 +1,5 @@
 "use client";
 import { HiOutlinePencil } from "react-icons/hi2";
-import { useEffect, useState } from "react";
-import Toogle from "../components/toogle/page";
 import Link from "next/link";
 
 const VedioCall = () => {
