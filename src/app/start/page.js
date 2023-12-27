@@ -9,7 +9,7 @@ const VedioCall = () => {
         <div className="border-[2] bg-white border-gray-400  py-10 px-20 w-[40rem]   shadow-xl rounded-2xl  ">
           <div>
             <span className="text-[15px]  font-normal text-[#6c687d]">
-              Vernon Tucker
+              Vernon Tuck !
             </span>
             <h3 className=" my-4 text-[28px] font-medium">Hey, there!</h3>
             <p className=" text-[15px]  font-normal text-[#6c687d] my-3 leading-[25px]">
