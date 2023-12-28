@@ -26,8 +26,8 @@ const VedioCall = () => {
   console.log(recordStart, "susryryryry");
   // console.log(recordedChunks, "sfgffgf");
   const startRecording = () => {
-    console.log("hello");
-    setRecordStart(true);
+    // console.log("hello");
+    // setRecordStart(true);
     setRecordedChunks([]);
 
     const stream = webcamRef.current.stream;
@@ -44,6 +44,7 @@ const VedioCall = () => {
       const recordedBlob = new Blob(recordedChunks, {
         type: "vedio/webm",
       });
+      console.log(recordedBlob);
       const videoUrl = URL.createObjectURL(recordedBlob);
       console.log(videoUrl);
       setRecordedVideoUrl(videoUrl);
