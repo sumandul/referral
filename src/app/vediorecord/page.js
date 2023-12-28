@@ -27,7 +27,7 @@ const VedioCall = () => {
   // console.log(recordedChunks, "sfgffgf");
   const startRecording = () => {
     // console.log("hello");
-    // setRecordStart(true);
+    setRecordStart(true);
     setRecordedChunks([]);
 
     const stream = webcamRef.current.stream;
